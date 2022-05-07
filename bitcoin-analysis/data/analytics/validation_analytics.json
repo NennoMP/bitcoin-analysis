@@ -1,0 +1,49 @@
+{
+    "tot_invalid": 16,
+    "not_in_utxo": {
+        "tot": 9,
+        "tx_ids": [
+            12152,
+            15698,
+            30446,
+            61845,
+            97294,
+            97295,
+            114916,
+            137237,
+            204751
+        ]
+    },
+    "neg_dest_pk": {
+        "tot": 1,
+        "tx_ids": [
+            97292
+        ]
+    },
+    "invalid_pk": {
+        "tot": 2,
+        "tx_ids": [
+            116411,
+            138278
+        ]
+    },
+    "neg_output": {
+        "tot": 1,
+        "tx_ids": [
+            105281
+        ]
+    },
+    "not_enough_value": {
+        "tot": 1,
+        "tx_ids": [
+            100929
+        ]
+    },
+    "invalid_coinbase": {
+        "tot": 2,
+        "tx_ids": [
+            56851,
+            56853
+        ]
+    }
+}

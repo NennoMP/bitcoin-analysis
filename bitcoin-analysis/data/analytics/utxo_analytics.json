@@ -1,0 +1,11 @@
+{
+    "n_utxo": 71896,
+    "tot_utxo_value": 5000800.0000001,
+    "max_utxo": {
+        "tx_id": 140479,
+        "block_id": 90532,
+        "output_index": 170430,
+        "output_address": 138895,
+        "value": 90000.0
+    }
+}
