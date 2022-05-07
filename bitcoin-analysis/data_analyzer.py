@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 
 # Analytics filenames
-UTXO_FILE = r'data/analytics/utxo_ids.txt'
-UTXO_ANALYTICS_FILE = r'data/analytics/utxo_analytics.json'
+UTXO_FILE = r'bitcoin-analysis/data/analytics/utxo_ids.txt'
+UTXO_ANALYTICS_FILE = r'bitcoin-analysis/data/analytics/utxo_analytics.json'
 
 # Constants
 BTC_SATOSHI_RATIO = 100_000_000
@@ -110,7 +110,7 @@ class DataAnalyzer():
         blocks_occupancy = self.tx_df.groupby('block_id').count()
         self.plot_chart(
             data=blocks_occupancy,
-            filename='data/plots/block_occupancy.jpg',
+            filename='bitcoin-analysis/data/plots/block_occupancy.jpg',
             xlabel='Block IDs',
             ylabel='Block occupancy (# of transactions)',
         )
@@ -127,7 +127,7 @@ class DataAnalyzer():
         self.plot_scatter(
             xdata=bo_distribution.keys(),
             ydata=bo_distribution.values(),
-            filename='data/plots/block_occupancy_distribution.jpg',
+            filename='bitcoin-analysis/data/plots/block_occupancy_distribution.jpg',
             xlabel='Block occupancy (# of transactions)',
             ylabel='Frequency',
         )
@@ -137,7 +137,7 @@ class DataAnalyzer():
         blocks_month = blocks_occupancy.groupby(blocks_occupancy.index // month_blocks).mean() # average occupancy per month
         self.plot_chart(
             data=blocks_month,
-            filename='data/plots/block_size_monthly.jpg',
+            filename='bitcoin-analysis/data/plots/block_size_monthly.jpg',
             xlabel='Months',
             ylabel='# of transactions (average)',
             marker='.',
@@ -155,7 +155,7 @@ class DataAnalyzer():
         btc_received = pks_groups['value'].sum() / BTC_SATOSHI_RATIO # Satoshi to BTC
         self.plot_chart(
             data=btc_received,
-            filename='data/plots/received_bitcoin.jpg',
+            filename='bitcoin-analysis/data/plots/received_bitcoin.jpg',
             xlabel='Public keys IDs',
             ylabel='# of BTC',
             color='#f2a900',
@@ -173,7 +173,7 @@ class DataAnalyzer():
         self.plot_scatter(
             xdata=btc_distribution.keys(),
             ydata=btc_distribution.values(),
-            filename='data/plots/received_bitcoin_distribution.jpg',
+            filename='bitcoin-analysis/data/plots/received_bitcoin_distribution.jpg',
             xlabel='BTC received',
             ylabel='Frequency',
             color='#f2a900',
@@ -202,7 +202,7 @@ class DataAnalyzer():
         txs_fees = (txs_inputs['value'].sum() - txs_outputs['value'].sum()) /BTC_SATOSHI_RATIO # Satoshi to BTC
         self.plot_chart(
             data=txs_fees,
-            filename='data/plots/fees.jpg',
+            filename='bitcoin-analysis/data/plots/fees.jpg',
             xlabel='Transactions IDs',
             ylabel='Fees (BTC)',
             color='r',
@@ -220,7 +220,7 @@ class DataAnalyzer():
         self.plot_scatter(
             xdata=fees_distribution.keys(),
             ydata=fees_distribution.values(),
-            filename='data/plots/fees_distribution.jpg',
+            filename='bitcoin-analysis/data/plots/fees_distribution.jpg',
             xlabel='Fees (BTC)',
             ylabel='Frequency',
             color='r',
@@ -236,7 +236,7 @@ class DataAnalyzer():
         self.plot_scatter(
             xdata=values,
             ydata=fees,
-            filename='data/plots/value_fees_distribution.jpg',
+            filename='bitcoin-analysis/data/plots/value_fees_distribution.jpg',
             xlabel='Total input (BTC)',
             ylabel='Fees (BTC)',
             color='k',
@@ -252,7 +252,7 @@ class DataAnalyzer():
         self.plot_scatter(
             xdata=n_inputs,
             ydata=fees,
-            filename='data/plots/inputs_fees_distribution.jpg',
+            filename='bitcoin-analysis/data/plots/inputs_fees_distribution.jpg',
             xlabel='# of inputs',
             ylabel='Fees (BTC)',
             color='k',

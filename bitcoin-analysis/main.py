@@ -3,14 +3,14 @@ from data_validator import DataValidator
 from data_analyzer import DataAnalyzer
 
 # Non-validated data-set files
-TXS_FILE = r'data/transactions.csv'
-INPUTS_FILE = r'data/inputs.csv'
-OUTPUTS_FILE = r'data/outputs.csv'
+TXS_FILE = r'bitcoin-analysis/data/transactions.csv'
+INPUTS_FILE = r'bitcoin-analysis/data/inputs.csv'
+OUTPUTS_FILE = r'bitcoin-analysis/data/outputs.csv'
 
 # Validated data-set files
-VALIDATED_TXS_FILE = r'data/validated_transactions.csv'
-VALIDATED_INPUTS_FILE = r'data/validated_inputs.csv'
-VALIDATED_OUTPUTS_FILE = r'data/validated_outputs.csv'
+VALIDATED_TXS_FILE = r'bitcoin-analysis/data/validated_transactions.csv'
+VALIDATED_INPUTS_FILE = r'bitcoin-analysis/data/validated_inputs.csv'
+VALIDATED_OUTPUTS_FILE = r'bitcoin-analysis/data/validated_outputs.csv'
 
 
 def load_data(txf: str, inf: str, outf: str) -> pd.DataFrame:
@@ -44,8 +44,8 @@ def main():
 
     # Perform analysis
     da = DataAnalyzer(tx_df, in_df, out_df)
-    da.get_utxo()
-    da.block_occupancy_analytics()
+    #da.get_utxo()
+    #da.block_occupancy_analytics()
     da.received_btc_analytics()
     da.fees_analytics()
 

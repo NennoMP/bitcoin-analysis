@@ -2,9 +2,9 @@ import json
 import pandas as pd
 
 # Validation results files
-VALIDATED_FOLDER = r'data/'
-VALIDATION_FILE = r'data/analytics/validation_analytics.json'
-UTXO_FILE = r'data/analytics/utxo_ids.txt'
+VALIDATED_FOLDER = r'bitcoin-analysis/data/'
+VALIDATION_FILE = r'bitcoin-analysis/data/analytics/validation_analytics.json'
+UTXO_FILE = r'bitcoin-analysis/data/analytics/utxo_ids.txt'
 
 # Constants
 MINING_REWARD = 5_000_000_000 # (Satoshi)
